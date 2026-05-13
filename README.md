@@ -1,6 +1,6 @@
-# 🏢 A B Enterprise — Ground Analytics
+# 🏢 A B Enterprise — Burdwan Ground Analytics
 
-> A premium, map-based real estate ground pricing intelligence platform for India, built 100% on the frontend — no backend required.
+> A premium, map-based real estate ground pricing intelligence platform focused exclusively on the Burdwan region.
 
 ![Tech Stack](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite)

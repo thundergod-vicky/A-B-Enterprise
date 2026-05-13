@@ -7,7 +7,7 @@ import { formatCurrency } from '../utils/mathUtils';
 const FlyTo = ({ center }) => {
   const map = useMap();
   useEffect(() => {
-    map.flyTo(center, 11, { duration: 1.2 });
+    map.flyTo(center, 12, { duration: 1.2 });
   }, [center, map]);
   return null;
 };
@@ -20,7 +20,7 @@ const MapComponent = ({ data, center, onMarkerClick, selectedId }) => {
   return (
     <MapContainer
       center={center}
-      zoom={11}
+      zoom={12}
       scrollWheelZoom
       zoomControl={false}
       style={{ height: '100%', width: '100%', background: '#0f172a' }}
