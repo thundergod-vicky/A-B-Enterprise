@@ -70,8 +70,8 @@ export default function App() {
               <Compass size={22} color="white" />
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 900, color: '#f8fafc' }}>Enterprise</div>
-              <div style={{ fontSize: 9, fontWeight: 800, color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Ground Analytics</div>
+              <div style={{ fontSize: 18, fontWeight: 900, color: '#f8fafc' }}>A B Enterprise</div>
+              <div style={{ fontSize: 9, fontWeight: 800, color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Construction & Analytics</div>
             </div>
           </div>
         </div>
