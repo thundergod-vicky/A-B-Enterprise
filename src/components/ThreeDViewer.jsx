@@ -13,7 +13,7 @@ import {
 import * as THREE from 'three';
 
 // --- Procedural Building (Safe & Fast) ---
-const ProceduralBuilding = ({ floors = 1, area = 1000, color = "#10b981", label }) => {
+const ProceduralBuilding = ({ floors = 1, area = 1000, color = "#facc15", label }) => {
   const floorHeight = 3.5;
   const bSize = Math.sqrt(area) / 3;
   const totalHeight = floors * floorHeight;
@@ -40,7 +40,7 @@ const ProceduralBuilding = ({ floors = 1, area = 1000, color = "#10b981", label 
       </Float>
       <Html position={[0, totalHeight + 5, 0]} center distanceFactor={15}>
         <div style={{
-          background: 'rgba(15,23,42,0.95)', border: `1px solid ${color}`, color: 'white',
+          background: 'rgba(0,0,0,0.95)', border: `1px solid ${color}`, color: 'white',
           padding: '8px 16px', borderRadius: 12, fontSize: 11, fontWeight: 900,
           whiteSpace: 'nowrap', backdropFilter: 'blur(10px)', textTransform: 'uppercase',
           boxShadow: `0 0 20px ${color}33`
@@ -68,7 +68,7 @@ const ModelLoader = ({ url, floors, area, name }) => {
         <primitive object={clone} scale={[scale, scale * (1 + (floors-1)*0.5), scale]} />
         <Html position={[0, 20, 0]} center distanceFactor={15}>
           <div style={{
-            background: 'rgba(15,23,42,0.95)', border: '1px solid #10b981', color: 'white',
+            background: 'rgba(0,0,0,0.95)', border: '1px solid #facc15', color: 'white',
             padding: '8px 16px', borderRadius: 12, fontSize: 11, fontWeight: 900,
             whiteSpace: 'nowrap', backdropFilter: 'blur(10px)', textTransform: 'uppercase'
           }}>
@@ -85,21 +85,21 @@ const ModelLoader = ({ url, floors, area, name }) => {
 const ThreeDViewer = ({ floors = 1, area = 1000, modelUrl, modelName }) => {
   return (
     <div style={{
-      height: '100%', width: '100%', background: '#020617', position: 'relative'
+      height: '100%', width: '100%', background: '#000000', position: 'relative'
     }}>
       <Canvas 
         shadows 
         camera={{ position: [50, 40, 50], fov: 28 }}
         style={{ pointerEvents: 'auto' }}
       >
-        <color attach="background" args={['#020617']} />
-        <fog attach="fog" args={['#020617', 60, 180]} />
+        <color attach="background" args={['#000000']} />
+        <fog attach="fog" args={['#000000', 60, 180]} />
         
         <ambientLight intensity={0.5} />
-        <spotLight position={[30, 45, 30]} angle={0.2} penumbra={1} intensity={2.5} color="#10b981" castShadow />
+        <spotLight position={[30, 45, 30]} angle={0.2} penumbra={1} intensity={2.5} color="#facc15" castShadow />
         <Environment preset="city" />
 
-        <Suspense fallback={<Html center><div style={{ color: '#10b981', fontWeight: 900, letterSpacing: '0.3em' }}>INITIALIZING 3D WORLD...</div></Html>}>
+        <Suspense fallback={<Html center><div style={{ color: '#facc15', fontWeight: 900, letterSpacing: '0.3em' }}>INITIALIZING 3D WORLD...</div></Html>}>
           {modelUrl ? (
             <ModelLoader url={modelUrl} floors={floors} area={area} name={modelName} />
           ) : (
@@ -128,7 +128,7 @@ const ThreeDViewer = ({ floors = 1, area = 1000, modelUrl, modelName }) => {
 
       <div style={{
         position: 'absolute', bottom: 30, right: 30, fontSize: 10, color: '#475569', fontWeight: 900,
-        pointerEvents: 'none', letterSpacing: '0.1em', background: 'rgba(15,23,42,0.9)', padding: '12px 24px',
+        pointerEvents: 'none', letterSpacing: '0.1em', background: 'rgba(0,0,0,0.9)', padding: '12px 24px',
         borderRadius: 30, border: '1px solid rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)'
       }}>
         LMB: ROTATE • RMB: PAN • SCROLL: ZOOM
